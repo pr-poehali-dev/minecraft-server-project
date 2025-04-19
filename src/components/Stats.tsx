@@ -1,31 +1,31 @@
-import { Clock, Users, Star, Server } from "lucide-react";
+import { Clock, Users, Star, Settings } from "lucide-react";
 
 const statsItems = [
   {
     icon: <Users className="h-8 w-8 text-white" />,
-    value: "50,000+",
+    value: "40,000+",
     label: "Игроков",
   },
   {
-    icon: <Server className="h-8 w-8 text-white" />,
-    value: "5",
-    label: "Серверов",
+    icon: <Settings className="h-8 w-8 text-white" />,
+    value: "6",
+    label: "Режимов игры",
   },
   {
     icon: <Clock className="h-8 w-8 text-white" />,
-    value: "3+ года",
+    value: "4+ года",
     label: "Онлайн",
   },
   {
     icon: <Star className="h-8 w-8 text-white" />,
-    value: "95%",
+    value: "97%",
     label: "Положительных отзывов",
   },
 ];
 
 const Stats = () => {
   return (
-    <section className="bg-gradient-to-r from-minecraft-blue to-minecraft-green py-12">
+    <section className="bg-gradient-to-r from-cubeworld-primary to-cubeworld-secondary py-14">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {statsItems.map((item, index) => (

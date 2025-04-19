@@ -63,12 +63,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				minecraft: {
-					green: '#5DB85C',
-					blue: '#3B8AC4',
-					red: '#D9534F',
-					dark: '#222222',
-					light: '#F8F9FA'
+				cubeworld: {
+					primary: '#8E44AD', // фиолетовый
+					secondary: '#3498DB', // синий
+					accent: '#F39C12', // оранжевый
+					dark: '#2C3E50', // темно-синий
+					light: '#ECF0F1', // светло-серый
+					success: '#2ECC71', // зеленый
+					danger: '#E74C3C', // красный
+					warning: '#F1C40F' // желтый
 				}
 			},
 			borderRadius: {
@@ -96,15 +99,25 @@ export default {
 				'float': {
 					'0%, 100%': { transform: 'translateY(0)' },
 					'50%': { transform: 'translateY(-10px)' }
+				},
+				'pulse-slow': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.7' }
+				},
+				'rotate-cube': {
+					'0%': { transform: 'rotateY(0deg)' },
+					'100%': { transform: 'rotateY(360deg)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
 				'accordion-up': 'accordion-up 0.2s ease-out',
-				'float': 'float 5s ease-in-out infinite'
+				'float': 'float 5s ease-in-out infinite',
+				'pulse-slow': 'pulse-slow 3s ease-in-out infinite',
+				'rotate-cube': 'rotate-cube 10s linear infinite'
 			},
 			backgroundImage: {
-				'minecraft-pattern': "url('/minecraft-bg.png')"
+				'cube-pattern': 'url("/cube-pattern.svg")'
 			}
 		}
 	},

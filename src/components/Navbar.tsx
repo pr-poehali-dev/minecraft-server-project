@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Gamepad2, Users, MessageSquare, Server, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { Gamepad2, BookOpen, GiftIcon, Server as ServerIcon, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Logo from "@/components/Logo";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,16 +13,15 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 bg-minecraft-dark py-3 border-b-2 border-minecraft-green shadow-md">
+    <nav className="sticky top-0 z-50 bg-white py-3 shadow-md">
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2">
-          <img src="/logo-b.svg" alt="MineLand" className="h-10" />
-          <span className="text-xl font-bold text-white hidden sm:block">МайнЛенд</span>
+        <Link to="/" className="z-20">
+          <Logo />
         </Link>
 
         {/* Мобильная кнопка меню */}
         <button 
-          className="md:hidden text-white"
+          className="md:hidden z-20 text-cubeworld-dark hover:text-cubeworld-primary transition-colors"
           onClick={toggleMenu}
           aria-label="Меню"
         >
@@ -31,20 +31,20 @@ const Navbar = () => {
         {/* Десктопное меню */}
         <div className="hidden md:flex items-center gap-6">
           <NavLinks />
-          <Button asChild className="minecraft-btn">
-            <Link to="/play">ИГРАТЬ</Link>
+          <Button asChild className="cube-btn">
+            <Link to="/how-to-play">ИГРАТЬ</Link>
           </Button>
         </div>
 
         {/* Мобильное меню */}
         <div className={cn(
-          "fixed inset-0 bg-minecraft-dark pt-20 px-4 md:hidden transition-transform duration-300",
+          "fixed inset-0 bg-white pt-20 px-4 md:hidden transition-transform duration-300 z-10",
           isOpen ? "translate-x-0" : "translate-x-full"
         )}>
           <div className="flex flex-col gap-4">
             <NavLinks mobile onClick={toggleMenu} />
-            <Button asChild className="minecraft-btn w-full mt-4">
-              <Link to="/play" onClick={toggleMenu}>ИГРАТЬ</Link>
+            <Button asChild className="cube-btn w-full mt-4">
+              <Link to="/how-to-play" onClick={toggleMenu}>ИГРАТЬ</Link>
             </Button>
           </div>
         </div>
@@ -60,10 +60,10 @@ interface NavLinksProps {
 
 const NavLinks = ({ mobile, onClick }: NavLinksProps) => {
   const links = [
-    { name: "Сервера", icon: <Server size={18} />, path: "/servers" },
-    { name: "Донат", icon: <Gamepad2 size={18} />, path: "/donate" },
-    { name: "Форум", icon: <MessageSquare size={18} />, path: "/forum" },
-    { name: "Правила", icon: <Users size={18} />, path: "/rules" },
+    { name: "Сервера", icon: <ServerIcon size={18} />, path: "/servers" },
+    { name: "Привилегии", icon: <Gamepad2 size={18} />, path: "/donate" },
+    { name: "Правила", icon: <BookOpen size={18} />, path: "/rules" },
+    { name: "Бонусы", icon: <GiftIcon size={18} />, path: "/rewards" },
   ];
 
   return (
@@ -73,8 +73,8 @@ const NavLinks = ({ mobile, onClick }: NavLinksProps) => {
           key={link.name}
           to={link.path}
           className={cn(
-            "flex items-center gap-2 text-white transition-colors hover:text-minecraft-green",
-            mobile && "text-xl py-3 border-b border-gray-700"
+            "flex items-center gap-2 text-cubeworld-dark font-medium transition-colors hover:text-cubeworld-primary",
+            mobile && "text-xl py-3 border-b border-gray-100"
           )}
           onClick={onClick}
         >

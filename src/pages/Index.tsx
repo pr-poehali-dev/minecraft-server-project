@@ -3,7 +3,8 @@ import Hero from "@/components/Hero";
 import ServersList from "@/components/ServersList";
 import Features from "@/components/Features";
 import Stats from "@/components/Stats";
-import JoinSection from "@/components/JoinSection";
+import HowToJoin from "@/components/HowToJoin";
+import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -15,7 +16,8 @@ const Index = () => {
         <ServersList />
         <Features />
         <Stats />
-        <JoinSection />
+        <HowToJoin />
+        <Testimonials />
       </main>
       <Footer />
     </div>

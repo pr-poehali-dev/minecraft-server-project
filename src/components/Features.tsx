@@ -1,52 +1,52 @@
-import { Shield, Award, Users, Zap, Server, Gift } from "lucide-react";
+import { Shield, Award, Users, Zap, GiftIcon, Layers } from "lucide-react";
 
 const features = [
   {
-    icon: <Server className="h-12 w-12 text-minecraft-green" />,
+    icon: <Layers className="h-12 w-12 text-cubeworld-primary" />,
     title: "Стабильная работа",
-    description: "Наши сервера работают 24/7 с минимальными техническими перерывами",
+    description: "Наши серверы размещены на мощном оборудовании, обеспечивающем бесперебойную работу 24/7",
   },
   {
-    icon: <Users className="h-12 w-12 text-minecraft-green" />,
-    title: "Дружное сообщество",
-    description: "Тысячи игроков уже выбрали нас. Присоединяйтесь к нашей семье!",
+    icon: <Users className="h-12 w-12 text-cubeworld-secondary" />,
+    title: "Активное сообщество",
+    description: "Тысячи игроков уже выбрали CubeWorld. Присоединяйтесь к нашей дружной семье!",
   },
   {
-    icon: <Shield className="h-12 w-12 text-minecraft-green" />,
-    title: "Защита от читеров",
-    description: "Современная защита от любых видов читов и нечестной игры",
+    icon: <Shield className="h-12 w-12 text-cubeworld-primary" />,
+    title: "Безопасная игра",
+    description: "Надежная защита от читеров и гриферов обеспечивает комфортную игру для всех",
   },
   {
-    icon: <Award className="h-12 w-12 text-minecraft-green" />,
+    icon: <Award className="h-12 w-12 text-cubeworld-secondary" />,
     title: "Уникальные режимы",
-    description: "Эксклюзивные игровые режимы, которых нет на других серверах",
+    description: "Авторские игровые режимы с эксклюзивными механиками и возможностями",
   },
   {
-    icon: <Zap className="h-12 w-12 text-minecraft-green" />,
-    title: "Быстрая поддержка",
-    description: "Наша команда поддержки работает круглосуточно и готова помочь",
+    icon: <Zap className="h-12 w-12 text-cubeworld-primary" />,
+    title: "Оперативная поддержка",
+    description: "Команда модераторов и техподдержки всегда на связи и готова помочь",
   },
   {
-    icon: <Gift className="h-12 w-12 text-minecraft-green" />,
-    title: "Регулярные события",
-    description: "Конкурсы, турниры и акции с ценными призами каждую неделю",
+    icon: <GiftIcon className="h-12 w-12 text-cubeworld-secondary" />,
+    title: "Бонусы и акции",
+    description: "Регулярные мероприятия, конкурсы и раздачи ценных призов для игроков",
   },
 ];
 
 const Features = () => {
   return (
-    <section className="py-16">
+    <section className="py-16 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold mb-4">Почему выбирают нас</h2>
+          <h2 className="text-3xl font-bold mb-4 gradient-text">Преимущества CubeWorld</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            МайнЛенд - это не просто сервер Minecraft, это целое сообщество единомышленников
+            Мы создали комфортную игровую экосистему, где каждый игрок найдет что-то по душе
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg pixel-border">
+            <div key={index} className="cube-card-alt p-6">
               <div className="flex flex-col items-center text-center">
                 <div className="mb-4">{feature.icon}</div>
                 <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
